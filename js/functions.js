@@ -1,21 +1,13 @@
 // Функция проверки длины строки
-const checkLength = (newString.length <= sizeString) ? true : false;
+const checkLength = (newString.length <= sizeString);
 checkLength;
 
-
 //Является ли строка палиндромом
-let newString = 'Аргентина манит Негра';
-let upperCase = newString.toUpperCase();
-let replaceAll = newString.replaceAll(' ' , '');
-let reversNewString;
-let resultReversString = (reversNewString === newString) ? true : false;
+newString = newString.replaceAll(' ','').toLowerCase();
+reversNewString = Array.from(newString).reverse().join('');
+const resultReversString = (reversNewString === newString);
 
-reversNewString = upperCase && replaceAll;
-reversNewString = Array.from(reversNewString).reverse().join('');
-
-newString = upperCase && replaceAll;
-
-
-console.log(newString);
-console.log(reversNewString);
-resultReversString;
+//Извлекает все цифры из строки
+let str = '234'; 
+str = String(str);
+const b = str.match(/\d/g).join('');
