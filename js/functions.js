@@ -1,13 +1,41 @@
 // Функция проверки длины строки
-const checkLength = (newString.length <= sizeString);
-checkLength;
+const lengthCheck = (newString, sizeString) => newString.length <= sizeString;
+
+lengthCheck('ываываыва',10);
 
 //Является ли строка палиндромом
-newString = newString.replaceAll(' ','').toLowerCase();
-reversNewString = Array.from(newString).reverse().join('');
-const resultReversString = (reversNewString === newString);
+function checkPalindrom(startString) {
 
+  startString = startString.replaceAll(' ', '').toLowerCase();
+
+  const reversString = Array.from(startString).reverse().join('');
+
+  return startString === reversString;
+
+}
+
+checkPalindrom('молом');
 //Извлекает все цифры из строки
-let str = '234'; 
-str = String(str);
-const b = str.match(/\d/g).join('');
+const getNumber = (str) => {
+
+  if (str !== '') {
+
+    str = String(str);
+
+    if (!str.match(/\d/g) === []){
+
+      const onlyNumber = str.match(/\d/g).join('');
+
+      return onlyNumber;
+
+    }
+
+  }
+
+  return NaN;
+
+};
+
+getNumber('');
+
+
