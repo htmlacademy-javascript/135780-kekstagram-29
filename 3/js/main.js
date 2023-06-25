@@ -42,13 +42,13 @@ const DESCRIPTIONS = [
   'Как-то так',
 ];
 
-const photos = 25;
-const minLikes = 15;
-const maxLikes = 200;
-const minComments = 0;
-const maxComments = 30;
-const minAvatar = 1;
-const maxAvatar = 6;
+const MAX_PHOTOS = 25;
+const MIN_LIKES = 15;
+const MAX_LIKES = 200;
+const MIN_COMMENT = 0;
+const MAX_COMMENT = 30;
+const MIN_AVATAR = 1;
+const MAX_AVATAR = 6;
 
 // Рандомайзер
 function getRandomInteger(a, b) {
@@ -61,10 +61,10 @@ const getRandomArrayElement = (elements) => elements[getRandomInteger(0, element
 // создание комментатора
 const COMMENTATOR = () => {
   const result = [];
-  for (let i = 0; i < getRandomInteger(minComments, maxComments); i++) {
+  for (let i = 0; i < getRandomInteger(MIN_COMMENT, MAX_COMMENT); i++) {
     result.push({
       id: i + 1,
-      avatar: `img/avatar-${getRandomInteger(minAvatar,maxAvatar)}.svg`,
+      avatar: `img/avatar-${getRandomInteger(MIN_AVATAR,MAX_AVATAR)}.svg`,
       message: getRandomArrayElement(MESSAGES),
       name: getRandomArrayElement(NAMES)
     });
@@ -79,11 +79,11 @@ const newPhotos = (photos) => {
       id: i + 1,
       url: `photos/'${(i + 1)}.jpg`,
       description: getRandomArrayElement(DESCRIPTIONS),
-      likes: getRandomInteger(minLikes, maxLikes),
+      likes: getRandomInteger(MIN_LIKES, MAX_LIKES),
       comments: COMMENTATOR()
     });
   }
   return result;
 };
 
-newPhotos(photos);
+newPhotos(MAX_PHOTOS);
