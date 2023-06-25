@@ -26,7 +26,7 @@ const DESCRIPTIONS = [
   'Упс',
   'Как-то так',
 ];
-
+// Параметры поста
 const MAX_PHOTOS = 25;
 const MIN_LIKES = 15;
 const MAX_LIKES = 200;
