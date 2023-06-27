@@ -39,3 +39,23 @@ const getNumber = (str) => {
 getNumber('');
 
 
+// Подсчет рабочего времени
+
+
+const stringForTime = (timeString) => {
+  const [hours, minutes] = timeString.split(':');
+  return (hours * 60) + Number(minutes);
+
+};
+
+
+const timeHowWork = (timeStartWork, timeFinalWork, timeStartMeeting, timeMeetingLong) => {
+  timeStartWork = stringForTime(timeStartWork);
+  timeFinalWork = stringForTime(timeFinalWork);
+  timeStartMeeting = stringForTime(timeStartMeeting);
+
+  return (timeStartMeeting >= timeStartWork) && (timeStartMeeting + timeMeetingLong) <= timeFinalWork;
+
+};
+
+timeHowWork('08:00','17:30','10:00', 100);
